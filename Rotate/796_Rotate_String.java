@@ -3,6 +3,7 @@ class Solution {
         if (A.length()!=B.length()) return false;
         // if both are empty strings return true
         if (A.length()==0 && B.length()==0) return true;
+        // if B is a rotate of A, B must be a substring of A+A
         String s = A + A;
         boolean flag = true;
         for (int j=0; j<A.length(); j++){
