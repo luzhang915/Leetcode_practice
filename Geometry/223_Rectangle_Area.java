@@ -5,7 +5,7 @@ class Solution {
         int a2 = (G - E) * (H - F);
         // compute overlap
         int overlap = 0;
-        // overlap? l2<r1 and r2>l1 and b2<t1 and t2>b1
+        // overlap? l2<r1 and r2>l1 and b2<t1 and t2>b1 (836. Rectangle Overlap)
         if (E<C && G>A && F<D && H>B){
         // find bounds of overlap
             int ol = Integer.max(A,E);
