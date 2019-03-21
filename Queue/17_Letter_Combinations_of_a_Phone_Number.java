@@ -1,4 +1,5 @@
-class Solution {
+// a brute force solution 
+class Solution1 {
     List<String> sol = new ArrayList<String>();
     public List<String> letterCombinations(String digits) {
         if (digits.length()==0) return sol;
@@ -39,5 +40,26 @@ class Solution {
                 return new char[]{'w', 'x', 'y', 'z'};
         }
         return null;
+    }
+}
+
+// a fast solution use linkedlist queue
+class Solution2 {
+    public List<String> letterCombinations(String digits) {
+        LinkedList<String> sol = new LinkedList<String>();
+        if (digits.length()==0) return sol;
+        sol.add("");
+        String[] map = new String[]{"0", "1", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+        for (int i=0; i<digits.length(); i++){
+            int d = Character.getNumericValue(digits.charAt(i));
+            while (sol.peek().length()==i){
+                String old = sol.remove();
+                for (char c : map[d].toCharArray()){
+                    sol.add(old + c);
+                }
+            }
+            
+        }
+        return sol;
     }
 }
