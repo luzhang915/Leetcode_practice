@@ -9,5 +9,5 @@
 973 315
 ## Queue Problem:
 17 238
-## Rotate Problem:
+## String Problem:
 796
