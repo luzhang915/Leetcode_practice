@@ -3,6 +3,7 @@ class Solution1 {
         HashMap<Integer, Integer> map = new HashMap<>();
         Stack<Integer> stack = new Stack<>();
         for (int n : nums2) {
+            // n is the next greater integer for any smaller integers in the stack
             while (!stack.isEmpty() && stack.peek()<n) {
                 map.put(stack.pop(), n);
             }
